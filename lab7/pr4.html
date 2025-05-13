@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Events</title>
+    <script>
+        window.onload = function() {
+            alert("Hello");
+        };
+        
+        window.onbeforeunload = function() {
+            return "Bye";
+        };
+    </script>
+</head>
+<body>
+    <h2>Welcome to the Page</h2>
+    <p>Alert will show 'Hello' on load and 'Bye' when exiting.</p>
+</body>
+</html>

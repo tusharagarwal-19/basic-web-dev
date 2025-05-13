@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP Validation</title>
+</head>
+<body>
+    <label>Generated OTP</label><br>
+    <input type="text" id="otp" readonly><br><br>
+    <button onclick="generateOTP()">Generate OTP</button><br><br>
+    
+    <label>Enter OTP</label><br>
+    <input type="text" id="enterOtp"><br><br>
+    <button onclick="validateOTP()">Validate OTP</button>
+
+    <script>
+        function generateOTP() {
+            let otp = Math.floor(100000 + Math.random() * 900000);
+            document.getElementById("otp").value = otp;
+        }
+
+        function validateOTP() {
+            let otp = document.getElementById("otp").value;
+            let enterOtp = document.getElementById("enterOtp").value;
+
+            if (enterOtp.length !== 6 || isNaN(enterOtp)) {
+                alert("Error: Entered OTP must be exactly 6 digits and numeric.");
+                return;
+            }
+
+            if (otp === enterOtp) {
+                alert("Successful");
+            } else {
+                alert("Error!! OTP didn't match");
+            }
+        }
+    </script>
+</body>
+</html>

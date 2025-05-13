@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Hello N Times</title>
+    <script>
+        // Function to display "Hello" n times
+        function displayHelloNTimes() {
+            // Prompt the user to enter a number
+            let n = prompt("Enter the number of times to display 'Hello':");
+
+            // Convert the input to a number
+            n = parseInt(n);
+
+            // Check if the input is a valid positive number
+            if (isNaN(n) || n <= 0) {
+                alert("Please enter a valid positive number.");
+            } else {
+                // Display "Hello" n times
+                let message = "";
+                for (let i = 1; i <= n; i++) {
+                    message += "Hello\n"; // Add "Hello" and a newline character
+                }
+                alert(message); // Display the message in an alert dialog box
+            }
+        }
+
+        // Call the function when the page loads
+        window.onload = displayHelloNTimes;
+    </script>
+</head>
+<body>
+    <h1>Display Hello N Times</h1>
+    <p>Check the prompt dialog box to see the message repeated!</p>
+</body>
+</html>

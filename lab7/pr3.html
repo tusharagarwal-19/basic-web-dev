@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <script>
+        function calculate(operation) {
+            let num1 = parseFloat(document.getElementById('num1').value) || 0;
+            let num2 = parseFloat(document.getElementById('num2').value) || 0;
+            let result;
+
+            switch (operation) {
+                case '+': result = num1 + num2; break;
+                case '-': result = num1 - num2; break;
+                case '*': result = num1 * num2; break;
+                case '/': result = num2 !== 0 ? num1 / num2 : 'Error'; break;
+                default: result = 'Invalid';
+            }
+
+            document.getElementById('result').value = result;
+        }
+    </script>
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+    <form onsubmit="event.preventDefault();">
+        <label>No1: <input type="number" id="num1" required></label><br><br>
+        <label>No2: <input type="number" id="num2" required></label><br><br>
+        <label>Result: <input type="text" id="result" readonly></label><br><br>
+        
+        <button type="button" onclick="calculate('+')">+</button>
+        <button type="button" onclick="calculate('-')">-</button>
+        <button type="button" onclick="calculate('*')">*</button>
+        <button type="button" onclick="calculate('/')">/</button>
+    </form>
+</body>
+</html>
